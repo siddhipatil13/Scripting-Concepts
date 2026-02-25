@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+let size = parseInt(prompt("Enter the number of persons"));
+let persons = new Array(size); 
+
+
+for (let i = 0; i < size; i++) {
+  persons[i] = prompt("Enter name " + (i + 1));
+}
+
+
+document.write("Names in array:<br>");
+for (let i = 0; i < size; i++) {
+  document.write(persons[i] + "<br>");
+}
+</script>
+
+</body>
+</html>

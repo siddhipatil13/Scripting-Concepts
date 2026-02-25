@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade System</title>
+</head>
+<body>
+
+    <h2>Student Grade System</h2>
+    <button onclick="createStudent()">Check Grade</button>
+
+    <p id="output"></p>
+
+    <script>
+        class Student {
+            constructor(name, marks) {
+                this.name = name;
+                this.marks = marks;
+                this.grade = this.calculateGrade();
+            }
+
+            calculateGrade() {
+                let grade;
+
+                switch (true) {
+                    case (this.marks >= 90):
+                        grade = "A+";
+                        break;
+                    case (this.marks >= 75):
+                        grade = "A";
+                        break;
+                    case (this.marks >= 60):
+                        grade = "B";
+                        break;
+                    case (this.marks >= 50):
+                        grade = "C";
+                        break;
+                    default:
+                        grade = "Fail";
+                }
+
+                return grade;
+            }
+
+            display() {
+                return "Name: " + this.name +
+                       "<br>Marks: " + this.marks +
+                       "<br>Grade: " + this.grade;
+            }
+        }
+
+        function createStudent() {
+            let student1 = new Student("Rahul", 82);
+            document.getElementById("output").innerHTML = student1.display();
+        }
+    </script>
+
+</body>
+</html>

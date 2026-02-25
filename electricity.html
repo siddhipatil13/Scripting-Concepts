@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Electricity</title>
+<body>
+<script>
+    let num1 = parseFloat(prompt("Enter first units used:"));
+	functions calculateBill(units){
+    let bill = 0;
+	if (units <= 50){
+	bill = units * 5;}
+	else if (units <=100){
+	bill = (50 * 5) + ((units - 50) * 10);
+	}
+	return bill;
+	}
+	let totalBill = calculateBill(units);
+	alert("Total Electricity Bill:" + totalBill);
+</script>
+</head>
+</html>
+</body>

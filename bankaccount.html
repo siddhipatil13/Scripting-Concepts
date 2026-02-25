@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Details</title>
+</head>
+<body>
+<script>
+class BankAccount {
+    constructor(name, balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    deposit() {
+        let a = parseInt(prompt("Enter the amount to deposit:"), 10);
+        if (isNaN(a) || a <= 0) {
+            alert("Invalid deposit amount");
+            return;
+        }
+        this.balance += a;
+        alert(a + " deposited successfully");
+    }
+
+    withdraw() {
+        let b = parseInt(
+            prompt("Balance: " + this.balance + "\nEnter amount to withdraw:"),
+            10
+        );
+
+        if (isNaN(b) || b <= 0) {
+            alert("Invalid withdrawal amount");
+        } else if (b <= this.balance) {
+            this.balance -= b;
+            alert(b + " withdrawn successfully\nBalance: " + this.balance);
+        } else {
+            alert("Insufficient Funds");
+        }
+    }
+
+    display() {
+        alert(
+            "Account Holder: " + this.name +
+            "\nTotal Balance: " + this.balance
+        );
+    }
+}
+
+let name = prompt("Enter your name:");
+let balance = parseInt(prompt("Enter opening balance:"), 10);
+
+if (isNaN(balance) || balance < 0) {
+    alert("Invalid balance");
+} else {
+    let c1 = new BankAccount(name, balance);
+    c1.display();
+    c1.deposit();
+    c1.display();
+    c1.withdraw();
+    c1.display();
+}
+</script>
+</body>
+</html>

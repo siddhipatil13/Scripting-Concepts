@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript User Input Example</title>
+</head>
+<body>
+
+    <h2>Enter a Number</h2>
+    <input type="number" id="num" placeholder="Enter number">
+	
+    <button onclick="runProgram()">Check</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        
+        function checkEvenOdd(num) {
+            if (num % 2 === 0) {   // Condition
+                return "Even";
+            } else {
+                return "Odd";
+            }
+        }
+
+        
+        class NumberCheck {
+            constructor(number) {
+                this.number = number;
+            }
+
+            getResult() {
+                return "Number " + this.number + " is " + checkEvenOdd(this.number);
+            }
+        }
+
+        function runProgram() {
+            let value = document.getElementById("num").value;
+            let num = Number(value);
+
+            let numbers = [];   
+
+            
+            for (let i = 0; i < 1; i++) {
+                let obj = new NumberCheck(num);  
+                numbers.push(obj);
+            }
+
+            document.getElementById("result").innerHTML =
+                numbers[0].getResult();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let arr = [1, 2, 3, 4, 5];
+document.write("<h3>Original Array:</h3>");
+document.write(arr + "<br><br>");
+
+arr.push(6);
+document.write("After push(6): " + arr + "<br>");
+
+arr.pop();
+document.write("After pop(): " + arr + "<br>");
+
+arr.unshift(0);
+document.write("After unshift(0): " + arr + "<br>");
+
+arr.shift();
+document.write("After shift(): " + arr + "<br><br>");
+
+document.write("Length of array: " + arr.length + "<br><br>");
+
+document.write("Index of 4: " + arr.indexOf(4) + "<br>");
+
+let arr2 = [7, 8];
+let newArr = arr.concat(arr2);
+document.write("After concat: " + newArr + "<br><br>");
+
+document.write("After join('-'): " + arr.join("-") + "<br><br>");
+
+document.write("Using forEach():<br>");
+arr.forEach(function(value) {
+    document.write(value + "<br>");
+});
+document.write("<br>");
+</script>
+</body>
+</html>

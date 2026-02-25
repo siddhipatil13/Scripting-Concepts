@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events Example</title>
+    <style>
+         {
+            font-size: 18px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse Over Button Example</h2>
+
+    <button id="myBtn">Hover Over Me</button>
+
+    <p id="msg"></p>
+
+    <script>
+        const btn = document.getElementById("myBtn");
+        const msg = document.getElementById("msg");
+
+        btn.addEventListener("mouseover", function () {
+            msg.textContent = "Mouse is over the button!";
+        });
+
+        btn.addEventListener("mouseout", function () {
+            msg.textContent = "Mouse left the button.";
+        });
+    </script>
+
+</body>
+</html>
